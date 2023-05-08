@@ -44,11 +44,15 @@ nav > ul {
   display: flex;
   justify-content: space-between;
   justify-content: center;
+
 }
 nav li {
   flex: 0 0 auto;
+  margin: 0 2px;
 }
 nav li a {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   display: block;
   padding: 16px 12px;
   text-align: center;
@@ -57,6 +61,11 @@ nav li a {
   font-weight: bold;
   color: var(--color-texto-blanco);
   background-color: var(--color-back-inactive);
+}
+nav li a:hover{
+  color: var(--color-theme);
+  background-color: var(--color-active);
+  transition: 0.2s ease-in-out;
 }
 nav li.current-page a {
   color: var(--color-theme);

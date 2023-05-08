@@ -1,0 +1,76 @@
+:root{
+    --color-fondo: #e0e0e0;
+    --color-fuente: #d1d1d1;
+    --color-theme: #FFCE30;
+    --color-active: #288BA8;
+    --color-back-active: #746AB0;
+    --color-back-inactive: #c4c6c9;
+    --color-titulos: #E83845;
+    --color-texto-blanco: #FFF;
+    --color-gradient: linear-gradient(
+        to right,
+        var(--color-theme),
+        var(--color-back-active)
+    );
+}
+
+body{
+    background-color: var(--color-fondo);
+}
+
+main{
+    height: fit-content;
+}
+
+#sec-favorities-list{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    gap: 10px;
+}
+.contenedorPeliculasFavoritas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+    overflow: hidden;
+    padding: 5px;
+}
+.contenedorPeliculasFavoritas img{
+    width: 217px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+}
+.contenedorPeliculasFavoritas h3{
+    font-size: 16px;
+    font-weight: 600;
+}
+#codigo{
+    position: relative;
+    color: var(--color-active);
+    left: -132px;
+    font-size: 12px;
+    z-index: -1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#tituloPeli{
+    position: relative;
+    color: var(--color-active);
+    left: -109px;
+    font-size: 12px;
+    z-index: -1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#resumen{
+    position: relative;
+    color: var(--color-active);
+    top: -15px;
+    width: 360px;
+    font-size: 12px;
+    z-index: -1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

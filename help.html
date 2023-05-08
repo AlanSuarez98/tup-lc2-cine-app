@@ -7,7 +7,8 @@
     <title>TUP LC2 - TP Integrador</title>
     <link rel="shortcut icon" href="img/cinema_popcorn.ico" type="image/x-icon">
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pages/help.css">
 </head>
 
 <body>
@@ -39,28 +40,21 @@
         <section id="form-cine_contacto">
             <!-- Sección donde se debe colocar el formulario de contacto-->
             <form >
-                <table>
-                    <tr>
-                        <td><label for="namape">Nombre: </label></td>
-                        <td><input type="text" name="namape"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="email">Email: </label></td>
-                        <td><input type="email" name="email" id="email" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="mensaje">Mensaje: </label></td>
-                        <td><textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td><button type="reset">Limpiar</button></td>
-                        <td><button type="submit">Enviar</button></td>
-                    </tr>
-                </table>
+               <label for="namape">Nombre: </label>
+               <input type="text" name="namape">
+               <label for="email">Email: </label>
+               <input type="text" name="email" required>
+               <label for="mensaje">Mensaje: </label>
+               <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+               <div>
+                   <button type="reset">Limpiar</button>
+                   <button type="submit">Enviar</button>
+               </div>
             </form>
         </section>
-        <section id="sec-cine-result"></section>
+        <section id="sec-cine-result">
         <!-- Sección donde se debe mostrar los mensajes de error -->
+            <p>Ingrese un email válido</p>
         </section>
         <p></p>
     </main>

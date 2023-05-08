@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="img/cinema_popcorn.ico" type="image/x-icon">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pages/index.css">
 </head>
 
 <body>
@@ -30,6 +31,7 @@
     <main>
         <h2>Últimas Películas en Cartelera</h2>
         <section id="form-movie-new">
+            <p>Agregar Pelicula Favorita Por Codigo:</p>
             <!--Seccion para agregar una palicula favorita por codigo-->
             <form action="">
                 <input type="text" name="agregarPeli">
@@ -38,20 +40,21 @@
         </section>
         <section id="sec-messages">
             <!--Seccion para mensajes-->
-            <h4>Película agregada con éxito</h4>
-            <h4>Error: La Película seleccionada no se encuentra en la API o se produjo un
-                error al consultar</h4>
-            <h4>La Película ingresada ya se encuentra almacenada</h4>
+            <p id="succes">Película agregada con éxito</p>
+            <p id="error">Error: La Película seleccionada no se encuentra en la API o se produjo un
+                error al consultar</p>
+            <p id="warning">La Película ingresada ya se encuentra almacenada</p>
         </section>
         <section id="sec_peliculas">
             <!--Seccion visualizacion de peliculas-->
+            <!--El <span> dentro del <p> son para con js obtener los datos de las peliculas junto a sus id-->
             <div class="contenedorPeliculas" id="contenedorPeliculas">
                 <img src="https://image.tmdb.org/t/p/w500/fcFMd3HdyX7r5gtFwVnn2qr5Yhq.jpg" alt="Creed3">
                 <h3>Creed III</h3>
-                <p><strong>Código:</strong> 677179 <br />
-                    <strong>Título original:</strong> Creed III <br />
-                    <strong>Idioma original:</strong> en <br />
-                    <strong>Año:</strong> 2023-03-01
+                <p><strong>Código:</strong> <span id="code">677179</span><br /> <br />
+                    <strong>Título original:</strong> <span id="namePeli">Creed III</span> <br />
+                    <strong>Idioma original:</strong> <span id="idiomaPeli">en</span> <br />
+                    <strong>Año:</strong> <span id="añoPeli">2023-03-01</span>
                 </p>
                 <a href="#">Agregar a favoritos</a>
             </div>
