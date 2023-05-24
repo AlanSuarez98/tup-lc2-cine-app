@@ -1,0 +1,80 @@
+:root{
+    --color-fondo: #e0e0e0;
+    --color-fuente: #d1d1d1;
+    --color-theme: #FFCE30;
+    --color-active: #288BA8;
+    --color-back-active: #746AB0;
+    --color-back-inactive: #c4c6c9;
+    --color-titulos: #E83845;
+    --color-texto-blanco: #FFF;
+    --color-gradient: linear-gradient(
+        to right,
+        var(--color-theme),
+        var(--color-back-active)
+    );
+}
+
+body{
+    background-color: var(--color-fondo);
+}
+main{
+    height: fit-content;
+}
+h2{
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+}
+#sec_ayuda{
+    display: flex;
+    flex-direction: column;
+}
+#form-cine_contacto{
+    padding: 25px;
+}
+#form-cine_contacto form{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+#form-cine_contacto form label{
+    padding-top: 5px;
+}
+#form-cine_contacto form input{
+    height: 25px;
+}
+#form-cine_contacto form div{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+#mensaje{
+    resize: none;
+}
+#form-cine_contacto form div button{
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    display: flex;
+    justify-content: center;
+    background-color: #065249;
+    border: hidden;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+}
+#form-cine_contacto form div button:hover{
+    background-color: #0E8677;
+    transition: 0.2s ease-in-out;
+}
+#sec-cine-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sec-cine-result p{
+    background-color: #dc3545;
+    padding: 10px 35px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    cursor: default;
+}
