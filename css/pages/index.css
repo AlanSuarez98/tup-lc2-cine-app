@@ -22,6 +22,23 @@ main{
     justify-content: center;
     align-items: center;
 }
+#form-movie-new form{
+    display: flex;
+    align-items: center;
+}
+#btnAgregar{
+    margin: 0 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    border-radius: 5px;
+    box-shadow:0px 2px 0px #373c3c;
+    transition: 0.2s ease-in-out;
+}
+#btnAgregar:hover{
+    box-shadow:0px 0px 0px;
+    transition: 0.2s ease-in-out;
+}
 #sec-messages{
     position: relative;
     display: flex;
@@ -63,7 +80,7 @@ main{
     max-width: 1000px;
     justify-content: center;
     gap: 10px;
-    
+
 }
 .contenedorPeliculas{
     width: 225px;
