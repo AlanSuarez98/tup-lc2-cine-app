@@ -1,23 +1,18 @@
 :root{
-    --color-fondo: #e0e0e0;
-    --color-fuente: #d1d1d1;
-    --color-theme: #FFCE30;
-    --color-active: #288BA8;
-    --color-back-active: #746AB0;
+    --color-theme: #ffce30;
+    --color-active: #288ba8;
+    --color-back-active: #746ab0;
     --color-back-inactive: #c4c6c9;
-    --color-titulos: #E83845;
-    --color-texto-blanco: #FFF;
-    --color-gradient: linear-gradient(
-        to right,
-        var(--color-theme),
-        var(--color-back-active)
-    );
+    --color-titulos: #e83845;
+    --color-texto-blanco: #fff;
+    --color-verde: #28a79c;
+    --color-font: #1d1d1d;
+    --color-button: #7f8c8d;
+    --color-gradient: linear-gradient(to right, var(--color-theme), var(--color-back-active));
 }
 
-body{
-    background-color: var(--color-fondo);
-}
 main{
+    background-color: #e0e0e0;
     height: fit-content;
 }
 h2{
@@ -55,14 +50,14 @@ h2{
     box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
     display: flex;
     justify-content: center;
-    background-color: #065249;
+    background-color: var(--color-verde);
     border: hidden;
     margin: 5px;
     color: white;
     cursor: pointer;
 }
 #form-cine_contacto form div button:hover{
-    background-color: #0E8677;
+    background-color: var(--color-back-active);
     transition: 0.2s ease-in-out;
 }
 #sec-cine-result{
