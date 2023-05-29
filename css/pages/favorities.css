@@ -15,47 +15,105 @@ main{
     background-color: #e0e0e0;
     height: fit-content;
 }
-
-#sec-favorities-list{
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 20px auto;
+@media screen and (min-width: 1024px){
+    #sec-favorities-list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    #cardPeliculas{
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 20px auto;
+    }
+    .contenedorPeliculasFavoritas{
+        display: flex;
+        flex-direction: column;
+        width: 450px;
+        overflow: hidden;
+        padding: 5px;
+        
+    }
+    .contenedorPeliculasFavoritas img{
+        width: 60%;
+        align-self: center;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    }
+    .contenedorPeliculasFavoritas h3{
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .contenedorPeliculasFavoritas p{
+        font-size: 12px;
+        text-align: start;
+        cursor: default;
+        margin: 0;
+        font-weight: bold;
+        color: var(--color-verde);
+    }
+    .contenedorPeliculasFavoritas p span{
+        font-weight: lighter;
+    }
+    .code{
+        margin: 0 0 15px 0 !important;
+    }
 }
-.contenedorPeliculasFavoritas{
-    display: flex;
-    flex-direction: column;
-    width: 450px;
-    overflow: hidden;
-    padding: 5px;
-    
-}
-.contenedorPeliculasFavoritas img{
-    width: 60%;
-    align-self: center;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
-}
-.contenedorPeliculasFavoritas h3{
-    font-size: 16px;
-    text-align: center;
-    font-weight: 600;
-}
-.contenedorPeliculasFavoritas p{
-    font-size: 12px;
-    text-align: start;
-    cursor: default;
-    margin: 0;
-    font-weight: bold;
-    color: var(--color-verde);
-}
-.contenedorPeliculasFavoritas p span{
-    font-weight: lighter;
-}
-.code{
-    margin: 0 0 15px 0 !important;
+@media screen and (max-width: 1023px){
+    #sec-favorities-list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 150px;
+    }
+    #cardPeliculas{
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 20px auto;
+    }
+    .contenedorPeliculasFavoritas{
+        display: flex;
+        flex-direction: column;
+        width: 450px;
+        overflow: hidden;
+        padding: 5px;
+        
+    }
+    .contenedorPeliculasFavoritas img{
+        width: 60%;
+        align-self: center;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    }
+    .contenedorPeliculasFavoritas h3{
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .contenedorPeliculasFavoritas p{
+        font-size: 12px;
+        text-align: start;
+        cursor: default;
+        margin: 0;
+        font-weight: bold;
+        color: var(--color-verde);
+    }
+    .contenedorPeliculasFavoritas p span{
+        font-weight: lighter;
+    }
+    .code{
+        margin: 0 0 15px 0 !important;
+    }
 }
