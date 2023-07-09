@@ -53,7 +53,9 @@ main{
         background-color: #28a745;
         padding: 10px;
         z-index: 1;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #warning{
         position: absolute;
@@ -61,15 +63,18 @@ main{
         background-color: #ffc107;
         padding: 10px;
         z-index: 2;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #error{
         position: absolute;
         left: 125px;
         background-color: #dc3545;
-        padding: 10px;
+        border-radius: 15px;
+        padding: 10px 20px;
         z-index: 3;
-        visibility: hidden;
+        color: white;
     }
     #sec_peliculas{
         display: flex;
@@ -114,13 +119,15 @@ main{
     .contenedorPeliculas p span{
         font-weight: lighter;
     }
-    .contenedorPeliculas a{
+    .contenedorPeliculas button{
         margin: 20px 0px 15px 0px;
         background-color: #7f8c8d;
         text-align:center;
         color: white;
+        width: 100%;
         text-decoration: none;
         display: flex;
+        border: none;
         justify-content: center;
         align-items: center;
         border-radius: 15px;
@@ -128,7 +135,7 @@ main{
         box-shadow:0px 3px 0px #373c3c;
         transition: 0.2s ease-in-out;
     }
-    .contenedorPeliculas a:hover{
+    .contenedorPeliculas button:hover{
         box-shadow:0px 0px 0px;
         transition: 0.2s ease-in-out;
     }
@@ -139,28 +146,79 @@ main{
         padding: 10px;
     }
     #btnAnterior{
-        padding: 5px;
         cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
+        border: none;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px;
+        height: 50px;
+        width: 150px;
+        background-color: #070059;
+        color: var(--color-texto-blanco);
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s ease all;
     }
     #btnSiguiente{
-        padding: 5px;
         cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
+        border: none;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px;
+        height: 50px;
+        width: 150px;
+        background-color: #070059;
+        color: var(--color-texto-blanco);
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s ease all;
     }
     #btnAnterior:hover{
-        box-shadow:0px 0px 0px;
+        background-color: var(--color-back-active);
         transition: 0.2s ease-in-out;
     }
     #btnSiguiente:hover{
-        box-shadow:0px 0px 0px;
+        background-color: var(--color-back-active);
         transition: 0.2s ease-in-out;
+    }
+    #loading{
+        width: 100%;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+    }
+    .custom-loader {
+        width: 100px;
+        height: 100px;
+        display: grid;
+    }
+    .custom-loader::before,
+    .custom-loader::after {    
+        content:"";
+        grid-area: 1/1;
+        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
+        background: 
+          var(--c) 50%  0, 
+          var(--c) 50%  100%, 
+          var(--c) 100% 50%, 
+          var(--c) 0    50%;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        animation: s2 1s infinite;
+    }
+    .custom-loader::before {
+      margin:8px;
+      filter:hue-rotate(45deg);
+      background-size: 16px 16px;
+      animation-timing-function: linear
+    }
+    
+    @keyframes s2{ 
+      100%{transform: rotate(.5turn)}
     }
 }
 
@@ -189,35 +247,28 @@ main{
         transition: 0.2s ease-in-out;
     }
     #sec-messages{
-        position: relative;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 35px;
     }
     #succes{
-        position: absolute;
-        left: 425px;
         background-color: #28a745;
-        padding: 10px;
-        z-index: 1;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #warning{
-        position: absolute;
-        left: 325px;
         background-color: #ffc107;
-        padding: 10px;
-        z-index: 2;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #error{
-        position: absolute;
-        left: 125px;
         background-color: #dc3545;
-        padding: 10px;
-        z-index: 3;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #sec_peliculas{
         display: flex;
@@ -262,13 +313,15 @@ main{
     .contenedorPeliculas p span{
         font-weight: lighter;
     }
-    .contenedorPeliculas a{
+    .contenedorPeliculas button{
         margin: 20px 0px 15px 0px;
         background-color: #7f8c8d;
         text-align:center;
         color: white;
+        width: 100%;
         text-decoration: none;
         display: flex;
+        border: none;
         justify-content: center;
         align-items: center;
         border-radius: 15px;
@@ -276,7 +329,7 @@ main{
         box-shadow:0px 3px 0px #373c3c;
         transition: 0.2s ease-in-out;
     }
-    .contenedorPeliculas a:hover{
+    .contenedorPeliculas button:hover{
         box-shadow:0px 0px 0px;
         transition: 0.2s ease-in-out;
     }
@@ -287,29 +340,79 @@ main{
         padding: 10px;
     }
     #btnAnterior{
-        padding: 5px;
         cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
+        border: none;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px;
+        height: 50px;
+        width: 150px;
+        background-color: #070059;
+        color: var(--color-texto-blanco);
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s ease all;
     }
     #btnSiguiente{
-        padding: 5px;
         cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
+        border: none;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px;
+        height: 50px;
+        width: 150px;
+        background-color: #070059;
+        color: var(--color-texto-blanco);
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s ease all;
     }
     #btnAnterior:hover{
-        box-shadow:0px 0px 0px;
+        background-color: var(--color-back-active);
         transition: 0.2s ease-in-out;
     }
     #btnSiguiente:hover{
-        box-shadow:0px 0px 0px;
+        background-color: var(--color-back-active);
         transition: 0.2s ease-in-out;
     }
+    #loading{
+        width: 100%;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+    }
+    .custom-loader {
+        width: 100px;
+        height: 100px;
+        display: grid;
+    }
+    .custom-loader::before,
+    .custom-loader::after {    
+        content:"";
+        grid-area: 1/1;
+        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
+        background: 
+          var(--c) 50%  0, 
+          var(--c) 50%  100%, 
+          var(--c) 100% 50%, 
+          var(--c) 0    50%;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        animation: s2 1s infinite;
+    }
+    .custom-loader::before {
+      margin:8px;
+      filter:hue-rotate(45deg);
+      background-size: 16px 16px;
+      animation-timing-function: linear
+    }
+    @keyframes s2{ 
+        100%{transform: rotate(.5turn)}
+      }
 }
 @media screen and (min-width: 550px) and (max-width: 767px){
     #form-movie-new{
@@ -336,35 +439,31 @@ main{
         transition: 0.2s ease-in-out;
     }
     #sec-messages{
-        position: relative;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 35px;
     }
     #succes{
-        position: absolute;
-        left: 425px;
+        align-self: center;
         background-color: #28a745;
-        padding: 10px;
-        z-index: 1;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #warning{
-        position: absolute;
-        left: 325px;
+        align-self: center;
         background-color: #ffc107;
-        padding: 10px;
-        z-index: 2;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #error{
-        position: absolute;
-        left: 125px;
+        align-self: center;
         background-color: #dc3545;
-        padding: 10px;
-        z-index: 3;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #sec_peliculas{
         display: flex;
@@ -409,13 +508,15 @@ main{
     .contenedorPeliculas p span{
         font-weight: lighter;
     }
-    .contenedorPeliculas a{
+    .contenedorPeliculas button{
         margin: 20px 0px 15px 0px;
         background-color: #7f8c8d;
         text-align:center;
         color: white;
+        width: 100%;
         text-decoration: none;
         display: flex;
+        border: none;
         justify-content: center;
         align-items: center;
         border-radius: 15px;
@@ -423,7 +524,7 @@ main{
         box-shadow:0px 3px 0px #373c3c;
         transition: 0.2s ease-in-out;
     }
-    .contenedorPeliculas a:hover{
+    .contenedorPeliculas button:hover{
         box-shadow:0px 0px 0px;
         transition: 0.2s ease-in-out;
     }
@@ -434,28 +535,78 @@ main{
         padding: 10px;
     }
     #btnAnterior{
-        padding: 5px;
         cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
+        border: none;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px;
+        height: 50px;
+        width: 150px;
+        background-color: #070059;
+        color: var(--color-texto-blanco);
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s ease all;
     }
     #btnSiguiente{
-        padding: 5px;
         cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
+        border: none;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px;
+        height: 50px;
+        width: 150px;
+        background-color: #070059;
+        color: var(--color-texto-blanco);
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s ease all;
     }
     #btnAnterior:hover{
-        box-shadow:0px 0px 0px;
+        background-color: var(--color-back-active);
         transition: 0.2s ease-in-out;
     }
     #btnSiguiente:hover{
-        box-shadow:0px 0px 0px;
+        background-color: var(--color-back-active);
         transition: 0.2s ease-in-out;
+    }
+    #loading{
+        width: 100%;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+    }
+    .custom-loader {
+        width: 100px;
+        height: 100px;
+        display: grid;
+    }
+    .custom-loader::before,
+    .custom-loader::after {    
+        content:"";
+        grid-area: 1/1;
+        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
+        background: 
+          var(--c) 50%  0, 
+          var(--c) 50%  100%, 
+          var(--c) 100% 50%, 
+          var(--c) 0    50%;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        animation: s2 1s infinite;
+    }
+    .custom-loader::before {
+      margin:8px;
+      filter:hue-rotate(45deg);
+      background-size: 16px 16px;
+      animation-timing-function: linear
+    }
+    @keyframes s2{ 
+        100%{transform: rotate(.5turn)}
     }
 }
 @media screen and (min-width: 320px) and (max-width: 549px){
@@ -483,35 +634,28 @@ main{
         transition: 0.2s ease-in-out;
     }
     #sec-messages{
-        position: relative;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 35px;
     }
     #succes{
-        position: absolute;
-        left: 425px;
         background-color: #28a745;
-        padding: 10px;
-        z-index: 1;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #warning{
-        position: absolute;
-        left: 325px;
         background-color: #ffc107;
-        padding: 10px;
-        z-index: 2;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #error{
-        position: absolute;
-        left: 125px;
         background-color: #dc3545;
-        padding: 10px;
-        z-index: 3;
-        visibility: hidden;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
     }
     #sec_peliculas{
         display: flex;
@@ -557,13 +701,15 @@ main{
     .contenedorPeliculas p span{
         font-weight: lighter;
     }
-    .contenedorPeliculas a{
+    .contenedorPeliculas button{
         margin: 20px 0px 15px 0px;
         background-color: #7f8c8d;
         text-align:center;
         color: white;
+        width: 100%;
         text-decoration: none;
         display: flex;
+        border: none;
         justify-content: center;
         align-items: center;
         border-radius: 15px;
@@ -571,7 +717,7 @@ main{
         box-shadow:0px 3px 0px #373c3c;
         transition: 0.2s ease-in-out;
     }
-    .contenedorPeliculas a:hover{
+    .contenedorPeliculas button:hover{
         box-shadow:0px 0px 0px;
         transition: 0.2s ease-in-out;
     }
@@ -582,27 +728,77 @@ main{
         padding: 10px;
     }
     #btnAnterior{
-        padding: 5px;
         cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
+        border: none;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px;
+        height: 50px;
+        width: 150px;
+        background-color: #070059;
+        color: var(--color-texto-blanco);
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s ease all;
     }
     #btnSiguiente{
-        padding: 5px;
         cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
+        border: none;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px;
+        height: 50px;
+        width: 150px;
+        background-color: #070059;
+        color: var(--color-texto-blanco);
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 0.3s ease all;
     }
     #btnAnterior:hover{
-        box-shadow:0px 0px 0px;
+        background-color: var(--color-back-active);
         transition: 0.2s ease-in-out;
     }
     #btnSiguiente:hover{
-        box-shadow:0px 0px 0px;
+        background-color: var(--color-back-active);
         transition: 0.2s ease-in-out;
+    }
+    #loading{
+        width: 100%;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+    }
+    .custom-loader {
+        width: 100px;
+        height: 100px;
+        display: grid;
+    }
+    .custom-loader::before,
+    .custom-loader::after {    
+        content:"";
+        grid-area: 1/1;
+        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
+        background: 
+          var(--c) 50%  0, 
+          var(--c) 50%  100%, 
+          var(--c) 100% 50%, 
+          var(--c) 0    50%;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        animation: s2 1s infinite;
+    }
+    .custom-loader::before {
+      margin:8px;
+      filter:hue-rotate(45deg);
+      background-size: 16px 16px;
+      animation-timing-function: linear
+    }
+    @keyframes s2{ 
+        100%{transform: rotate(.5turn)}
     }
 }

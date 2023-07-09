@@ -16,11 +16,51 @@ main{
     height: fit-content;
 }
 @media screen and (min-width: 1024px){
+    #sec-message{
+        width: 100%;
+        height: 500px;
+        position: relative;
+        top: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #sec-message img{
+        width: 10%;
+        animation: move 5s linear infinite ;
+    }
+    #sec-message p{
+        background-color: #ffc107;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
+    }
+    
+    @keyframes move {
+        0%{
+            transform: translate(0px, 0px);
+        }
+        25%{
+            transform: translate(-15%, 0px);
+        }
+        50%{
+            transform: translate(0%, 0px);
+        }
+        75%{
+            transform: translate(15%, 0px);
+        }
+        100%{
+            transform: translate(0px, 0px);
+        }
+    }
     #sec-favorities-list{
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0;
+        position: relative;
+        top: -450px;
     }
     #cardPeliculas{
         justify-content: center;
@@ -62,16 +102,121 @@ main{
     .contenedorPeliculasFavoritas p span{
         font-weight: lighter;
     }
+    .contenedorPeliculasFavoritas button{
+        margin: 20px 0px 15px 0px;
+        background-color: #7f8c8d;
+        text-align:center;
+        color: white;
+        width: 250px;
+        text-decoration: none;
+        display: flex;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        border-radius: 15px;
+        padding:10px 0;
+        box-shadow:0px 3px 0px #373c3c;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas button:hover{
+        box-shadow:0px 0px 0px;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas div{
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    .contenedorPeliculasFavoritas div iframe{
+        width: 100%;
+        height: 100%;
+    }
     .code{
         margin: 0 0 15px 0 !important;
     }
+    #loading{
+        width: 100%;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+    }
+    .custom-loader {
+        width: 100px;
+        height: 100px;
+        display: grid;
+    }
+    .custom-loader::before,
+    .custom-loader::after {    
+        content:"";
+        grid-area: 1/1;
+        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
+        background: 
+          var(--c) 50%  0, 
+          var(--c) 50%  100%, 
+          var(--c) 100% 50%, 
+          var(--c) 0    50%;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        animation: s2 1s infinite;
+    }
+    .custom-loader::before {
+      margin:8px;
+      filter:hue-rotate(45deg);
+      background-size: 16px 16px;
+      animation-timing-function: linear
+    }
+    
+    @keyframes s2{ 
+      100%{transform: rotate(.5turn)}
+    }
 }
 @media screen and (max-width: 1023px){
+    #sec-message{
+        width: 100%;
+        height: 500px;
+        position: relative;
+        top: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #sec-message img{
+        width: 10%;
+        animation: move 5s linear infinite ;
+    }
+    @keyframes move {
+        0%{
+            transform: translate(0px, 0px);
+        }
+        25%{
+            transform: translate(-15%, 0px);
+        }
+        50%{
+            transform: translate(0%, 0px);
+        }
+        75%{
+            transform: translate(15%, 0px);
+        }
+        100%{
+            transform: translate(0px, 0px);
+        }
+    }
+    #sec-message p{
+        background-color: #ffc107;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
+    }
     #sec-favorities-list{
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 150px;
+        position: relative;
+        top: -650px;
     }
     #cardPeliculas{
         justify-content: center;
@@ -113,7 +258,535 @@ main{
     .contenedorPeliculasFavoritas p span{
         font-weight: lighter;
     }
+    .contenedorPeliculasFavoritas button{
+        margin: 20px 0px 15px 0px;
+        background-color: #7f8c8d;
+        text-align:center;
+        color: white;
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        padding:10px 0;
+        box-shadow:0px 3px 0px #373c3c;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas button:hover{
+        box-shadow:0px 0px 0px;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas div{
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    .contenedorPeliculasFavoritas div iframe{
+        width: 100%;
+        height: 100%;
+    }
     .code{
         margin: 0 0 15px 0 !important;
     }
+    #loading{
+        width: 100%;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+    }
+    .custom-loader {
+        width: 100px;
+        height: 100px;
+        display: grid;
+    }
+    .custom-loader::before,
+    .custom-loader::after {    
+        content:"";
+        grid-area: 1/1;
+        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
+        background: 
+          var(--c) 50%  0, 
+          var(--c) 50%  100%, 
+          var(--c) 100% 50%, 
+          var(--c) 0    50%;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        animation: s2 1s infinite;
+    }
+    .custom-loader::before {
+      margin:8px;
+      filter:hue-rotate(45deg);
+      background-size: 16px 16px;
+      animation-timing-function: linear
+    }
+    @keyframes s2{ 
+        100%{transform: rotate(.5turn)}
+      }
 }
+@media screen and (max-width: 490px){
+    #sec-message{
+        width: 100%;
+        height: 500px;
+        position: relative;
+        top: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #sec-message img{
+        width: 10%;
+        animation: move 5s linear infinite ;
+    }
+    #sec-message p{
+        background-color: #ffc107;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
+    }
+    @keyframes move {
+        0%{
+            transform: translate(0px, 0px);
+        }
+        25%{
+            transform: translate(-15%, 0px);
+        }
+        50%{
+            transform: translate(0%, 0px);
+        }
+        75%{
+            transform: translate(15%, 0px);
+        }
+        100%{
+            transform: translate(0px, 0px);
+        }
+    }
+    #sec-favorities-list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 150px;
+        position: relative;
+        top: -650px;
+    }
+    #cardPeliculas{
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 20px auto;
+    }
+    .contenedorPeliculasFavoritas{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        overflow: hidden;
+        padding: 5px;
+        
+    }
+    .contenedorPeliculasFavoritas img{
+        width: 60%;
+        align-self: center;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    }
+    .contenedorPeliculasFavoritas h3{
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .contenedorPeliculasFavoritas p{
+        font-size: 12px;
+        text-align: start;
+        cursor: default;
+        margin: 0;
+        font-weight: bold;
+        color: var(--color-verde);
+    }
+    .contenedorPeliculasFavoritas p span{
+        font-weight: lighter;
+    }
+    .contenedorPeliculasFavoritas button{
+        margin: 20px 0px 15px 0px;
+        background-color: #7f8c8d;
+        text-align:center;
+        color: white;
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        padding:10px 0;
+        box-shadow:0px 3px 0px #373c3c;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas button:hover{
+        box-shadow:0px 0px 0px;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas div{
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    .contenedorPeliculasFavoritas div iframe{
+        width: 100%;
+        height: 100%;
+    }
+    .code{
+        margin: 0 0 15px 0 !important;
+    }
+    #loading{
+        width: 100%;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+    }
+    .custom-loader {
+        width: 100px;
+        height: 100px;
+        display: grid;
+    }
+    .custom-loader::before,
+    .custom-loader::after {    
+        content:"";
+        grid-area: 1/1;
+        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
+        background: 
+          var(--c) 50%  0, 
+          var(--c) 50%  100%, 
+          var(--c) 100% 50%, 
+          var(--c) 0    50%;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        animation: s2 1s infinite;
+    }
+    .custom-loader::before {
+      margin:8px;
+      filter:hue-rotate(45deg);
+      background-size: 16px 16px;
+      animation-timing-function: linear
+    }
+    @keyframes s2{ 
+        100%{transform: rotate(.5turn)}
+    }
+}
+@media screen and (max-width: 430px){
+    #sec-message{
+        width: 100%;
+        height: 500px;
+        position: relative;
+        top: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #sec-message img{
+        width: 10%;
+        animation: move 5s linear infinite ;
+    }
+    #sec-message p{
+        background-color: #ffc107;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
+    }
+    @keyframes move {
+        0%{
+            transform: translate(0px, 0px);
+        }
+        25%{
+            transform: translate(-15%, 0px);
+        }
+        50%{
+            transform: translate(0%, 0px);
+        }
+        75%{
+            transform: translate(15%, 0px);
+        }
+        100%{
+            transform: translate(0px, 0px);
+        }
+    }
+    #sec-favorities-list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 150px;
+        position: relative;
+        top: -600px;
+    }
+    #cardPeliculas{
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 20px auto;
+    }
+    .contenedorPeliculasFavoritas{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        overflow: hidden;
+        padding: 5px;
+        
+    }
+    .contenedorPeliculasFavoritas img{
+        width: 60%;
+        align-self: center;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    }
+    .contenedorPeliculasFavoritas h3{
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .contenedorPeliculasFavoritas p{
+        font-size: 12px;
+        text-align: start;
+        cursor: default;
+        margin: 0;
+        font-weight: bold;
+        color: var(--color-verde);
+    }
+    .contenedorPeliculasFavoritas p span{
+        font-weight: lighter;
+    }
+    .contenedorPeliculasFavoritas button{
+        margin: 20px 0px 15px 0px;
+        background-color: #7f8c8d;
+        text-align:center;
+        color: white;
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        padding:10px 0;
+        box-shadow:0px 3px 0px #373c3c;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas button:hover{
+        box-shadow:0px 0px 0px;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas div{
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    .contenedorPeliculasFavoritas div iframe{
+        width: 100%;
+        height: 100%;
+    }
+    .code{
+        margin: 0 0 15px 0 !important;
+    }
+    #loading{
+        width: 100%;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+    }
+    .custom-loader {
+        width: 100px;
+        height: 100px;
+        display: grid;
+    }
+    .custom-loader::before,
+    .custom-loader::after {    
+        content:"";
+        grid-area: 1/1;
+        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
+        background: 
+          var(--c) 50%  0, 
+          var(--c) 50%  100%, 
+          var(--c) 100% 50%, 
+          var(--c) 0    50%;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        animation: s2 1s infinite;
+    }
+    .custom-loader::before {
+      margin:8px;
+      filter:hue-rotate(45deg);
+      background-size: 16px 16px;
+      animation-timing-function: linear
+    }
+    @keyframes s2{ 
+        100%{transform: rotate(.5turn)}
+    }
+}
+@media screen and (max-width: 376px){
+    #sec-message{
+        width: 100%;
+        height: 500px;
+        position: relative;
+        top: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #sec-message img{
+        width: 10%;
+        animation: move 5s linear infinite ;
+    }
+    #sec-message p{
+        background-color: #ffc107;
+        border-radius: 15px;
+        padding: 10px 20px;
+        color: white;
+    }
+    @keyframes move {
+        0%{
+            transform: translate(0px, 0px);
+        }
+        25%{
+            transform: translate(-15%, 0px);
+        }
+        50%{
+            transform: translate(0%, 0px);
+        }
+        75%{
+            transform: translate(15%, 0px);
+        }
+        100%{
+            transform: translate(0px, 0px);
+        }
+    }
+    #sec-favorities-list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 150px;
+        position: relative;
+        top: -600px;
+    }
+    #cardPeliculas{
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 20px auto;
+    }
+    .contenedorPeliculasFavoritas{
+        display: flex;
+        flex-direction: column;
+        width: 315px;
+        overflow: hidden;
+        padding: 5px;
+        
+    }
+    .contenedorPeliculasFavoritas img{
+        width: 60%;
+        align-self: center;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    }
+    .contenedorPeliculasFavoritas h3{
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .contenedorPeliculasFavoritas p{
+        font-size: 12px;
+        text-align: start;
+        cursor: default;
+        margin: 0;
+        font-weight: bold;
+        color: var(--color-verde);
+    }
+    .contenedorPeliculasFavoritas p span{
+        font-weight: lighter;
+    }
+    .contenedorPeliculasFavoritas button{
+        margin: 20px 0px 15px 0px;
+        background-color: #7f8c8d;
+        text-align:center;
+        color: white;
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        padding:10px 0;
+        box-shadow:0px 3px 0px #373c3c;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas button:hover{
+        box-shadow:0px 0px 0px;
+        transition: 0.2s ease-in-out;
+    }
+    .contenedorPeliculasFavoritas div{
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    .contenedorPeliculasFavoritas div iframe{
+        width: 100%;
+        height: 100%;
+    }
+    .code{
+        margin: 0 0 15px 0 !important;
+    }
+    #loading{
+        width: 100%;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+    }
+    .custom-loader {
+        width: 100px;
+        height: 100px;
+        display: grid;
+    }
+    .custom-loader::before,
+    .custom-loader::after {    
+        content:"";
+        grid-area: 1/1;
+        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
+        background: 
+          var(--c) 50%  0, 
+          var(--c) 50%  100%, 
+          var(--c) 100% 50%, 
+          var(--c) 0    50%;
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        animation: s2 1s infinite;
+    }
+    .custom-loader::before {
+      margin:8px;
+      filter:hue-rotate(45deg);
+      background-size: 16px 16px;
+      animation-timing-function: linear
+    }
+    @keyframes s2{ 
+        100%{transform: rotate(.5turn)}
+    }
+}
+
+

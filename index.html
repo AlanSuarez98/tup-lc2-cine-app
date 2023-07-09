@@ -9,6 +9,8 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css"/>
     <link rel="stylesheet" href="css/pages/index.css">
+    <script src="js/common.js" defer></script>
+    <script src="js/pages/index.js" defer></script>
 </head>
 
 <body>
@@ -34,65 +36,29 @@
             <p>Agregar Pelicula Favorita Por Codigo:</p>
             <!--Seccion para agregar una palicula favorita por codigo-->
             <form action="">
-                <input type="text" name="agregarPeli">
-                <button type="submit" id="btnAgregar">Agregar</button>
+                <input id="addCode" type="text" placeholder="Código de película">
+                <input type="button" id="btnAgregar" value="Agregar" onclick="addMovieCode()">
             </form>
         </section>
         <section id="sec-messages">
             <!--Seccion para mensajes-->
-            <p id="succes">Película agregada con éxito</p>
-            <p id="error">Error: La Película seleccionada no se encuentra en la API o se produjo un
-                error al consultar</p>
-            <p id="warning">La Película ingresada ya se encuentra almacenada</p>
+            
+        </section>
+        <section id="loading">
+            <div class="custom-loader"></div>
         </section>
         <section id="sec_peliculas">
             <!--Seccion visualizacion de peliculas-->
             <article id="cardPeliculas">
-                <div class="contenedorPeliculas" id="contenedorPeliculas">
-                    <img src="https://image.tmdb.org/t/p/w500/fcFMd3HdyX7r5gtFwVnn2qr5Yhq.jpg" alt="Creed3">
-                    <h3>Creed III</h3>
-                    <p>Código: <span>677179</span></p>
-                    <p>Título original: <span>Creed III</span></p>
-                    <p>Idioma original: <span>en</span></p>
-                    <p>Año: <span>2023-03-01</span></p>
-                    <a href="#">Agregar a favoritos</a>
-                </div>
-                <div class="contenedorPeliculas" id="contenedorPeliculas">
-                    <img src="https://www.ecartelera.com/carteles/13500/13593/008_m.jpg" alt="MarioBrossMovie">
-                    <h3>Super Mario Bros: la película</h3>
-                    <p>Código: <span>677179</span></p>
-                    <p>Título original: <span>Super Mario Bros: la película</span></p>
-                    <p>Idioma original: <span>en</span></p>
-                    <p>Año: <span>2023-03-01</span></p>
-                    <a href="#">Agregar a favoritos</a>
-    
-                </div>
-                <div class="contenedorPeliculas" id="contenedorPeliculas">
-                    <img src="https://pics.filmaffinity.com/aShazam_La_furia_de_los_dioses-942384944-large.jpg" alt="Shazam2">
-                    <h3>¡Shazam! La furia de los dioses</h3>
-                    <p>Código: <span>677179</span></p>
-                    <p>Título original: <span>¡Shazam! La furia de los dioses</span></p>
-                    <p>Idioma original: <span>en</span></p>
-                    <p>Año: <span>2023-03-01</span></p>
-                    <a href="#">Agregar a favoritos</a>
-                </div>
-                <div class="contenedorPeliculas" id="contenedorPeliculas">
-                    <img src="https://es.web.img3.acsta.net/pictures/22/11/03/17/38/4821956.jpg" alt="laNiñaDeLaComunion">
-                    <h3>La niña de la comunión</h3>
-                    <p>Código: <span>677179</span></p>
-                    <p>Título original: <span>La niña de la comunión</span></p>
-                    <p>Idioma original: <span>en</span></p>
-                    <p>Año: <span>2023-03-01</span></p>
-                    <a href="#">Agregar a favoritos</a>
-                </div>
+                
             </article>
             
         </section>
         <section id="sec_paginador_peliculas">
             <!--Seccion de Paginacion-->
             <div class="paginacion" id="paginacion">
-                <button id="btnAnterior">Anterior</button>
-                <button id="btnSiguiente">Siguiente</button>
+                <button id="btnAnterior" onclick="loadPreviousPage()">Anterior</button>
+                <button id="btnSiguiente" onclick="loadNextPage()">Siguiente</button>
             </div>
         </section>
 

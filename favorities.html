@@ -9,6 +9,8 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/favorities.css">
+    <script src="js/common.js" defer></script>
+    <script src="js/pages/favorities.js" defer></script>
 </head>
 
 <body>
@@ -30,25 +32,14 @@
     <!-- Contenido principal de la página -->
     <main>
         <h2>Mis Peliculas Favoritas</h2>
+        <section id="loading">
+            <div class="custom-loader"></div>
+        </section>
+        <section id="sec-message">
+        </section>
         <section id="sec-favorities-list">
             <!--Sección contenido de paliculas favoritas-->
             <article id="cardPeliculas">
-                <div class="contenedorPeliculasFavoritas" id="contenedorPeliculasFavoritas">
-                    <img src="https://pics.filmaffinity.com/aShazam_La_furia_de_los_dioses-942384944-large.jpg" alt="Creed3">
-                    <h3>¡Shazam! La furia de los dioses</h3>
-                    <p class="code">Código: <span>677179</span></p>
-                    <p>Título original: <span>¡Shazam! La furia de los dioses</span></p>
-                    <p>Idioma original: <span>en</span></p>
-                    <p>Resumen: <span>De New Line Cinema llega "¡Shazam! La Furia de los Dioses" con la continuación de la historia del adolescente Billy Batson quien, tras decir la palabra mágica SHAZAM! se transformó en su alter ego adulto de superhéroe, Shazam. Dotados con los poderes de los dioses, Billy Batson y sus hermanos adoptivos aún están aprendiendo cómo hacer malabarismos entre la vida adolescente y sus alter-egos como superhéroes adultos. Pero cuando las Hijas de Atlas, un trío de antiguas diosas vengativas, llegan a la Tierra en busca de la magia que les robaron hace mucho tiempo, Billy, también conocido como Shazam, y su familia se verán envueltos en una batalla por sus superpoderes, sus vidas y el destino de su mundo.</span></p>
-                </div>
-                <div class="contenedorPeliculasFavoritas" id="contenedorPeliculasFavoritas">
-                    <img src="https://www.ecartelera.com/carteles/13500/13593/008_m.jpg" alt="Creed3">
-                    <h3>Super Mario Bros: la película</h3>
-                    <p class="code">Código: <span>677178</span></p>
-                    <p>Título original: <span>Creed III</span></p>
-                    <p>Idioma original: <span>en</span></p>
-                    <p>Resumen: <span>De Nintendo e Illumination llega una nueva película animada basada en el mundo de Super Mario Bros. Dirigida por by Aaron Horvath y Michael Jelenic (colaboradores en Los Jóvenes Titanes en acción, Jóvenes Titanes en acción: la película) de un guion de Matthew Fogel (La gran aventura LEGO 2, Minions: Nace un villano), la película es protagonizada por Chris Pratt como Mario, Anya Taylor-Joy como la Princesa Peach, Charlie Day como Luigi, Jack Black como Bowser, Keegan-Michael Key como Toad, Seth Rogen como Donkey Kong, Fred Armisen como Cranky Kong, Kevin Michael Richardson como Kamek y Sebastian Maniscalco como Spike. La película es producida por el CEO y fundador de Illumination Chris Meledandri y por Shigeru Miyamoto de Nintendo. La película es co-financiada por Universal Pictures y Nintendo y estrenada mundialmente por Universal Pictures.</span></p>
-                </div>
             </article>
         </section>
     </main>

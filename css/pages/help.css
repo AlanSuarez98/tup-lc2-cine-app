@@ -37,6 +37,9 @@ h2{
 #form-cine_contacto form input{
     height: 25px;
 }
+#form-cine_contacto form textarea{
+    resize: none;
+}
 #form-cine_contacto form div{
     padding: 10px;
     display: flex;
@@ -50,6 +53,23 @@ h2{
     border-radius: 8px;
     box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
     display: flex;
+    height: 35px;
+    width: 90px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-verde);
+    border: hidden;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+}
+#form-cine_contacto form div input{
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    display: flex;
+    height: 35px;
+    width: 90px;
     justify-content: center;
     background-color: var(--color-verde);
     border: hidden;
@@ -61,12 +81,32 @@ h2{
     background-color: var(--color-back-active);
     transition: 0.2s ease-in-out;
 }
+#form-cine_contacto form div input:hover{
+    background-color: var(--color-back-active);
+    transition: 0.2s ease-in-out;
+}
 #sec-cine-result{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#sec-cine-result p{
+#invalido{
+    background-color: #dc3545;
+    padding: 10px 35px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    cursor: default;
+}
+#enviado{
+    background-color: #28a745;
+    padding: 10px 35px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    cursor: default;
+}
+#error{
     background-color: #dc3545;
     padding: 10px 35px;
     border-radius: 10px;
