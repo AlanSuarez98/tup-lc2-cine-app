@@ -1,804 +1,808 @@
-:root{
-    --color-theme: #ffce30;
-    --color-active: #288ba8;
-    --color-back-active: #746ab0;
-    --color-back-inactive: #c4c6c9;
-    --color-titulos: #e83845;
-    --color-texto-blanco: #fff;
-    --color-verde: #28a79c;
-    --color-font: #1d1d1d;
-    --color-button: #7f8c8d;
-    --color-gradient: linear-gradient(to right, var(--color-theme), var(--color-back-active));
+:root {
+  --color-theme: #ffce30;
+  --color-active: #288ba8;
+  --color-back-active: #746ab0;
+  --color-back-inactive: #c4c6c9;
+  --color-titulos: #e83845;
+  --color-texto-blanco: #fff;
+  --color-verde: #28a79c;
+  --color-font: #1d1d1d;
+  --color-button: #7f8c8d;
+  --color-gradient: linear-gradient(
+    to right,
+    var(--color-theme),
+    var(--color-back-active)
+  );
 }
 
-main{
-    background-color: #e0e0e0;
-    height: fit-content;
+main {
+  background-color: #e0e0e0;
+  height: fit-content;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
-@media screen and (min-width:1024px){
-    #form-movie-new{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media screen and (min-width: 1024px) {
+  #form-movie-new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-movie-new form {
+    display: flex;
+    align-items: center;
+  }
+  #btnAgregar {
+    margin: 0 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    border-radius: 5px;
+    box-shadow: 0px 2px 0px #373c3c;
+    transition: 0.2s ease-in-out;
+  }
+  #btnAgregar:hover {
+    box-shadow: 0px 0px 0px;
+    transition: 0.2s ease-in-out;
+  }
+  #sec-messages {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+  }
+  #succes {
+    position: absolute;
+    left: 425px;
+    background-color: #28a745;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #warning {
+    position: absolute;
+    left: 325px;
+    background-color: #ffc107;
+    padding: 10px;
+    z-index: 2;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #error {
+    position: absolute;
+    left: 125px;
+    background-color: #dc3545;
+    border-radius: 15px;
+    padding: 10px 20px;
+    z-index: 3;
+    color: white;
+  }
+  #sec_peliculas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cardPeliculas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    gap: 10px;
+  }
+  .contenedorPeliculas {
+    width: 225px;
+    overflow: hidden;
+    padding: 5px;
+  }
+  .contenedorPeliculas img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    cursor: pointer;
+  }
+  .contenedorPeliculas h3 {
+    font-size: 16px;
+    text-align: center;
+    margin: 0px 0px 15px 0px;
+    cursor: pointer;
+  }
+  .contenedorPeliculas p {
+    color: var(--color-verde);
+    font-size: 12px;
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .contenedorPeliculas p span {
+    font-weight: lighter;
+  }
+  .contenedorPeliculas button {
+    margin: 20px 0px 15px 0px;
+    background-color: #7f8c8d;
+    text-align: center;
+    color: white;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px 0;
+    box-shadow: 0px 3px 0px #373c3c;
+    transition: 0.2s ease-in-out;
+  }
+  .contenedorPeliculas button:hover {
+    box-shadow: 0px 0px 0px;
+    transition: 0.2s ease-in-out;
+  }
+  #sec_paginador_peliculas {
+    padding: 40px;
+  }
+  .paginacion {
+    padding: 10px;
+  }
+  #btnAnterior {
+    cursor: pointer;
+    border: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: #070059;
+    color: var(--color-texto-blanco);
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+  }
+  #btnSiguiente {
+    cursor: pointer;
+    border: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: #070059;
+    color: var(--color-texto-blanco);
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+  }
+  #btnAnterior:hover {
+    background-color: var(--color-back-active);
+    transition: 0.2s ease-in-out;
+  }
+  #btnSiguiente:hover {
+    background-color: var(--color-back-active);
+    transition: 0.2s ease-in-out;
+  }
+  #loading {
+    width: 100%;
+    position: absolute;
+    top: 300px;
+    left: 0px;
+  }
+  .custom-loader {
+    width: 100px;
+    height: 100px;
+    display: grid;
+  }
+  .custom-loader::before,
+  .custom-loader::after {
+    content: "";
+    grid-area: 1/1;
+    --c: radial-gradient(farthest-side, #52c1f4 92%, #0000);
+    background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+      var(--c) 0 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    animation: s2 1s infinite;
+  }
+  .custom-loader::before {
+    margin: 8px;
+    filter: hue-rotate(45deg);
+    background-size: 16px 16px;
+    animation-timing-function: linear;
+  }
+
+  @keyframes s2 {
+    100% {
+      transform: rotate(0.5turn);
     }
-    #form-movie-new form{
-        display: flex;
-        align-items: center;
-    }
-    #btnAgregar{
-        margin: 0 10px;
-        padding: 5px;
-        cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
-    }
-    #btnAgregar:hover{
-        box-shadow:0px 0px 0px;
-        transition: 0.2s ease-in-out;
-    }
-    #sec-messages{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 35px;
-    }
-    #succes{
-        position: absolute;
-        left: 425px;
-        background-color: #28a745;
-        padding: 10px;
-        z-index: 1;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #warning{
-        position: absolute;
-        left: 325px;
-        background-color: #ffc107;
-        padding: 10px;
-        z-index: 2;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #error{
-        position: absolute;
-        left: 125px;
-        background-color: #dc3545;
-        border-radius: 15px;
-        padding: 10px 20px;
-        z-index: 3;
-        color: white;
-    }
-    #sec_peliculas{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #cardPeliculas{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-flow: dense;
-        grid-auto-rows: auto;
-        width: 100%;
-        max-width: 1000px;
-        justify-content: center;
-        gap: 10px;
-    
-    }
-    .contenedorPeliculas{
-        width: 225px;
-        overflow: hidden;
-        padding: 5px;
-    }
-    .contenedorPeliculas img{
-        width: 100%;
-        margin-bottom: 10px;
-        border-radius: 15px;
-        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
-    }
-    .contenedorPeliculas h3{
-        font-size: 16px;
-        text-align: center;
-        cursor: default;
-        margin: 0px 0px 15px 0px;
-    }
-    .contenedorPeliculas p{
-        color: var(--color-verde);
-        font-size: 12px;
-        margin: 0;
-        cursor: default;
-        font-weight: bold;
-    }
-    .contenedorPeliculas p span{
-        font-weight: lighter;
-    }
-    .contenedorPeliculas button{
-        margin: 20px 0px 15px 0px;
-        background-color: #7f8c8d;
-        text-align:center;
-        color: white;
-        width: 100%;
-        text-decoration: none;
-        display: flex;
-        border: none;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        padding:10px 0;
-        box-shadow:0px 3px 0px #373c3c;
-        transition: 0.2s ease-in-out;
-    }
-    .contenedorPeliculas button:hover{
-        box-shadow:0px 0px 0px;
-        transition: 0.2s ease-in-out;
-    }
-    #sec_paginador_peliculas{
-        padding: 40px;
-    }
-    .paginacion{
-        padding: 10px;
-    }
-    #btnAnterior{
-        cursor: pointer;
-        border: none;
-        display: inline;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 20px;
-        height: 50px;
-        width: 150px;
-        background-color: #070059;
-        color: var(--color-texto-blanco);
-        border-radius: 25px;
-        font-weight: bold;
-        transition: 0.3s ease all;
-    }
-    #btnSiguiente{
-        cursor: pointer;
-        border: none;
-        display: inline;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 20px;
-        height: 50px;
-        width: 150px;
-        background-color: #070059;
-        color: var(--color-texto-blanco);
-        border-radius: 25px;
-        font-weight: bold;
-        transition: 0.3s ease all;
-    }
-    #btnAnterior:hover{
-        background-color: var(--color-back-active);
-        transition: 0.2s ease-in-out;
-    }
-    #btnSiguiente:hover{
-        background-color: var(--color-back-active);
-        transition: 0.2s ease-in-out;
-    }
-    #loading{
-        width: 100%;
-        position: absolute;
-        top: 300px;
-        left: 0px;
-    }
-    .custom-loader {
-        width: 100px;
-        height: 100px;
-        display: grid;
-    }
-    .custom-loader::before,
-    .custom-loader::after {    
-        content:"";
-        grid-area: 1/1;
-        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
-        background: 
-          var(--c) 50%  0, 
-          var(--c) 50%  100%, 
-          var(--c) 100% 50%, 
-          var(--c) 0    50%;
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        animation: s2 1s infinite;
-    }
-    .custom-loader::before {
-      margin:8px;
-      filter:hue-rotate(45deg);
-      background-size: 16px 16px;
-      animation-timing-function: linear
-    }
-    
-    @keyframes s2{ 
-      100%{transform: rotate(.5turn)}
-    }
+  }
 }
 
-@media screen and (min-width: 767px) and (max-width: 1023px){
-    #form-movie-new{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  #form-movie-new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-movie-new form {
+    display: flex;
+    align-items: center;
+  }
+  #btnAgregar {
+    margin: 0 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    border-radius: 5px;
+    box-shadow: 0px 2px 0px #373c3c;
+    transition: 0.2s ease-in-out;
+  }
+  #btnAgregar:hover {
+    box-shadow: 0px 0px 0px;
+    transition: 0.2s ease-in-out;
+  }
+  #sec-messages {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #succes {
+    background-color: #28a745;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #warning {
+    background-color: #ffc107;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #error {
+    background-color: #dc3545;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #sec_peliculas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cardPeliculas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    gap: 10px;
+  }
+  .contenedorPeliculas {
+    width: 225px;
+    overflow: hidden;
+    padding: 5px;
+  }
+  .contenedorPeliculas img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    cursor: pointer;
+  }
+  .contenedorPeliculas h3 {
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0px 0px 15px 0px;
+  }
+  .contenedorPeliculas p {
+    color: var(--color-verde);
+    font-size: 12px;
+    margin: 0;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .contenedorPeliculas p span {
+    font-weight: lighter;
+  }
+  .contenedorPeliculas button {
+    margin: 20px 0px 15px 0px;
+    background-color: #7f8c8d;
+    text-align: center;
+    color: white;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px 0;
+    box-shadow: 0px 3px 0px #373c3c;
+    transition: 0.2s ease-in-out;
+  }
+  .contenedorPeliculas button:hover {
+    box-shadow: 0px 0px 0px;
+    transition: 0.2s ease-in-out;
+  }
+  #sec_paginador_peliculas {
+    padding: 40px;
+  }
+  .paginacion {
+    padding: 10px;
+  }
+  #btnAnterior {
+    cursor: pointer;
+    border: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: #070059;
+    color: var(--color-texto-blanco);
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+  }
+  #btnSiguiente {
+    cursor: pointer;
+    border: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: #070059;
+    color: var(--color-texto-blanco);
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+  }
+  #btnAnterior:hover {
+    background-color: var(--color-back-active);
+    transition: 0.2s ease-in-out;
+  }
+  #btnSiguiente:hover {
+    background-color: var(--color-back-active);
+    transition: 0.2s ease-in-out;
+  }
+  #loading {
+    width: 100%;
+    position: absolute;
+    top: 300px;
+    left: 0px;
+  }
+  .custom-loader {
+    width: 100px;
+    height: 100px;
+    display: grid;
+  }
+  .custom-loader::before,
+  .custom-loader::after {
+    content: "";
+    grid-area: 1/1;
+    --c: radial-gradient(farthest-side, #52c1f4 92%, #0000);
+    background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+      var(--c) 0 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    animation: s2 1s infinite;
+  }
+  .custom-loader::before {
+    margin: 8px;
+    filter: hue-rotate(45deg);
+    background-size: 16px 16px;
+    animation-timing-function: linear;
+  }
+  @keyframes s2 {
+    100% {
+      transform: rotate(0.5turn);
     }
-    #form-movie-new form{
-        display: flex;
-        align-items: center;
-    }
-    #btnAgregar{
-        margin: 0 10px;
-        padding: 5px;
-        cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
-    }
-    #btnAgregar:hover{
-        box-shadow:0px 0px 0px;
-        transition: 0.2s ease-in-out;
-    }
-    #sec-messages{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #succes{
-        background-color: #28a745;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #warning{
-        background-color: #ffc107;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #error{
-        background-color: #dc3545;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #sec_peliculas{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #cardPeliculas{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-flow: dense;
-        grid-auto-rows: auto;
-        width: 100%;
-        max-width: 1000px;
-        justify-content: center;
-        gap: 10px;
-    
-    }
-    .contenedorPeliculas{
-        width: 225px;
-        overflow: hidden;
-        padding: 5px;
-    }
-    .contenedorPeliculas img{
-        width: 100%;
-        margin-bottom: 10px;
-        border-radius: 15px;
-        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
-    }
-    .contenedorPeliculas h3{
-        font-size: 16px;
-        text-align: center;
-        cursor: default;
-        margin: 0px 0px 15px 0px;
-    }
-    .contenedorPeliculas p{
-        color: var(--color-verde);
-        font-size: 12px;
-        margin: 0;
-        cursor: default;
-        font-weight: bold;
-    }
-    .contenedorPeliculas p span{
-        font-weight: lighter;
-    }
-    .contenedorPeliculas button{
-        margin: 20px 0px 15px 0px;
-        background-color: #7f8c8d;
-        text-align:center;
-        color: white;
-        width: 100%;
-        text-decoration: none;
-        display: flex;
-        border: none;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        padding:10px 0;
-        box-shadow:0px 3px 0px #373c3c;
-        transition: 0.2s ease-in-out;
-    }
-    .contenedorPeliculas button:hover{
-        box-shadow:0px 0px 0px;
-        transition: 0.2s ease-in-out;
-    }
-    #sec_paginador_peliculas{
-        padding: 40px;
-    }
-    .paginacion{
-        padding: 10px;
-    }
-    #btnAnterior{
-        cursor: pointer;
-        border: none;
-        display: inline;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 20px;
-        height: 50px;
-        width: 150px;
-        background-color: #070059;
-        color: var(--color-texto-blanco);
-        border-radius: 25px;
-        font-weight: bold;
-        transition: 0.3s ease all;
-    }
-    #btnSiguiente{
-        cursor: pointer;
-        border: none;
-        display: inline;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 20px;
-        height: 50px;
-        width: 150px;
-        background-color: #070059;
-        color: var(--color-texto-blanco);
-        border-radius: 25px;
-        font-weight: bold;
-        transition: 0.3s ease all;
-    }
-    #btnAnterior:hover{
-        background-color: var(--color-back-active);
-        transition: 0.2s ease-in-out;
-    }
-    #btnSiguiente:hover{
-        background-color: var(--color-back-active);
-        transition: 0.2s ease-in-out;
-    }
-    #loading{
-        width: 100%;
-        position: absolute;
-        top: 300px;
-        left: 0px;
-    }
-    .custom-loader {
-        width: 100px;
-        height: 100px;
-        display: grid;
-    }
-    .custom-loader::before,
-    .custom-loader::after {    
-        content:"";
-        grid-area: 1/1;
-        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
-        background: 
-          var(--c) 50%  0, 
-          var(--c) 50%  100%, 
-          var(--c) 100% 50%, 
-          var(--c) 0    50%;
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        animation: s2 1s infinite;
-    }
-    .custom-loader::before {
-      margin:8px;
-      filter:hue-rotate(45deg);
-      background-size: 16px 16px;
-      animation-timing-function: linear
-    }
-    @keyframes s2{ 
-        100%{transform: rotate(.5turn)}
-      }
+  }
 }
-@media screen and (min-width: 550px) and (max-width: 767px){
-    #form-movie-new{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media screen and (min-width: 550px) and (max-width: 767px) {
+  #form-movie-new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-movie-new form {
+    display: flex;
+    align-items: center;
+  }
+  #btnAgregar {
+    margin: 0 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    border-radius: 5px;
+    box-shadow: 0px 2px 0px #373c3c;
+    transition: 0.2s ease-in-out;
+  }
+  #btnAgregar:hover {
+    box-shadow: 0px 0px 0px;
+    transition: 0.2s ease-in-out;
+  }
+  #sec-messages {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #succes {
+    align-self: center;
+    background-color: #28a745;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #warning {
+    align-self: center;
+    background-color: #ffc107;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #error {
+    align-self: center;
+    background-color: #dc3545;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #sec_peliculas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cardPeliculas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    gap: 10px;
+  }
+  .contenedorPeliculas {
+    width: 225px;
+    overflow: hidden;
+    padding: 5px;
+  }
+  .contenedorPeliculas img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    cursor: pointer;
+  }
+  .contenedorPeliculas h3 {
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0px 0px 15px 0px;
+  }
+  .contenedorPeliculas p {
+    color: var(--color-verde);
+    font-size: 12px;
+    margin: 0;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .contenedorPeliculas p span {
+    font-weight: lighter;
+  }
+  .contenedorPeliculas button {
+    margin: 20px 0px 15px 0px;
+    background-color: #7f8c8d;
+    text-align: center;
+    color: white;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px 0;
+    box-shadow: 0px 3px 0px #373c3c;
+    transition: 0.2s ease-in-out;
+  }
+  .contenedorPeliculas button:hover {
+    box-shadow: 0px 0px 0px;
+    transition: 0.2s ease-in-out;
+  }
+  #sec_paginador_peliculas {
+    padding: 40px;
+  }
+  .paginacion {
+    padding: 10px;
+  }
+  #btnAnterior {
+    cursor: pointer;
+    border: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: #070059;
+    color: var(--color-texto-blanco);
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+  }
+  #btnSiguiente {
+    cursor: pointer;
+    border: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: #070059;
+    color: var(--color-texto-blanco);
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+  }
+  #btnAnterior:hover {
+    background-color: var(--color-back-active);
+    transition: 0.2s ease-in-out;
+  }
+  #btnSiguiente:hover {
+    background-color: var(--color-back-active);
+    transition: 0.2s ease-in-out;
+  }
+  #loading {
+    width: 100%;
+    position: absolute;
+    top: 300px;
+    left: 0px;
+  }
+  .custom-loader {
+    width: 100px;
+    height: 100px;
+    display: grid;
+  }
+  .custom-loader::before,
+  .custom-loader::after {
+    content: "";
+    grid-area: 1/1;
+    --c: radial-gradient(farthest-side, #52c1f4 92%, #0000);
+    background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+      var(--c) 0 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    animation: s2 1s infinite;
+  }
+  .custom-loader::before {
+    margin: 8px;
+    filter: hue-rotate(45deg);
+    background-size: 16px 16px;
+    animation-timing-function: linear;
+  }
+  @keyframes s2 {
+    100% {
+      transform: rotate(0.5turn);
     }
-    #form-movie-new form{
-        display: flex;
-        align-items: center;
-    }
-    #btnAgregar{
-        margin: 0 10px;
-        padding: 5px;
-        cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
-    }
-    #btnAgregar:hover{
-        box-shadow:0px 0px 0px;
-        transition: 0.2s ease-in-out;
-    }
-    #sec-messages{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #succes{
-        align-self: center;
-        background-color: #28a745;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #warning{
-        align-self: center;
-        background-color: #ffc107;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #error{
-        align-self: center;
-        background-color: #dc3545;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #sec_peliculas{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #cardPeliculas{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-flow: dense;
-        grid-auto-rows: auto;
-        width: 100%;
-        max-width: 1000px;
-        justify-content: center;
-        gap: 10px;
-    
-    }
-    .contenedorPeliculas{
-        width: 225px;
-        overflow: hidden;
-        padding: 5px;
-    }
-    .contenedorPeliculas img{
-        width: 100%;
-        margin-bottom: 10px;
-        border-radius: 15px;
-        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
-    }
-    .contenedorPeliculas h3{
-        font-size: 16px;
-        text-align: center;
-        cursor: default;
-        margin: 0px 0px 15px 0px;
-    }
-    .contenedorPeliculas p{
-        color: var(--color-verde);
-        font-size: 12px;
-        margin: 0;
-        cursor: default;
-        font-weight: bold;
-    }
-    .contenedorPeliculas p span{
-        font-weight: lighter;
-    }
-    .contenedorPeliculas button{
-        margin: 20px 0px 15px 0px;
-        background-color: #7f8c8d;
-        text-align:center;
-        color: white;
-        width: 100%;
-        text-decoration: none;
-        display: flex;
-        border: none;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        padding:10px 0;
-        box-shadow:0px 3px 0px #373c3c;
-        transition: 0.2s ease-in-out;
-    }
-    .contenedorPeliculas button:hover{
-        box-shadow:0px 0px 0px;
-        transition: 0.2s ease-in-out;
-    }
-    #sec_paginador_peliculas{
-        padding: 40px;
-    }
-    .paginacion{
-        padding: 10px;
-    }
-    #btnAnterior{
-        cursor: pointer;
-        border: none;
-        display: inline;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 20px;
-        height: 50px;
-        width: 150px;
-        background-color: #070059;
-        color: var(--color-texto-blanco);
-        border-radius: 25px;
-        font-weight: bold;
-        transition: 0.3s ease all;
-    }
-    #btnSiguiente{
-        cursor: pointer;
-        border: none;
-        display: inline;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 20px;
-        height: 50px;
-        width: 150px;
-        background-color: #070059;
-        color: var(--color-texto-blanco);
-        border-radius: 25px;
-        font-weight: bold;
-        transition: 0.3s ease all;
-    }
-    #btnAnterior:hover{
-        background-color: var(--color-back-active);
-        transition: 0.2s ease-in-out;
-    }
-    #btnSiguiente:hover{
-        background-color: var(--color-back-active);
-        transition: 0.2s ease-in-out;
-    }
-    #loading{
-        width: 100%;
-        position: absolute;
-        top: 300px;
-        left: 0px;
-    }
-    .custom-loader {
-        width: 100px;
-        height: 100px;
-        display: grid;
-    }
-    .custom-loader::before,
-    .custom-loader::after {    
-        content:"";
-        grid-area: 1/1;
-        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
-        background: 
-          var(--c) 50%  0, 
-          var(--c) 50%  100%, 
-          var(--c) 100% 50%, 
-          var(--c) 0    50%;
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        animation: s2 1s infinite;
-    }
-    .custom-loader::before {
-      margin:8px;
-      filter:hue-rotate(45deg);
-      background-size: 16px 16px;
-      animation-timing-function: linear
-    }
-    @keyframes s2{ 
-        100%{transform: rotate(.5turn)}
-    }
+  }
 }
-@media screen and (min-width: 320px) and (max-width: 549px){
-    #form-movie-new{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media screen and (min-width: 320px) and (max-width: 549px) {
+  #form-movie-new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-movie-new form {
+    display: flex;
+    align-items: center;
+  }
+  #btnAgregar {
+    margin: 0 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    border-radius: 5px;
+    box-shadow: 0px 2px 0px #373c3c;
+    transition: 0.2s ease-in-out;
+  }
+  #btnAgregar:hover {
+    box-shadow: 0px 0px 0px;
+    transition: 0.2s ease-in-out;
+  }
+  #sec-messages {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #succes {
+    background-color: #28a745;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #warning {
+    background-color: #ffc107;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #error {
+    background-color: #dc3545;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: white;
+  }
+  #sec_peliculas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+  }
+  #cardPeliculas {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    gap: 10px;
+  }
+  .contenedorPeliculas {
+    width: 225px;
+    overflow: hidden;
+    padding: 5px;
+  }
+  .contenedorPeliculas img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    cursor: pointer;
+  }
+  .contenedorPeliculas h3 {
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0px 0px 15px 0px;
+  }
+  .contenedorPeliculas p {
+    color: var(--color-verde);
+    font-size: 12px;
+    margin: 0;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .contenedorPeliculas p span {
+    font-weight: lighter;
+  }
+  .contenedorPeliculas button {
+    margin: 20px 0px 15px 0px;
+    background-color: #7f8c8d;
+    text-align: center;
+    color: white;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px 0;
+    box-shadow: 0px 3px 0px #373c3c;
+    transition: 0.2s ease-in-out;
+  }
+  .contenedorPeliculas button:hover {
+    box-shadow: 0px 0px 0px;
+    transition: 0.2s ease-in-out;
+  }
+  #sec_paginador_peliculas {
+    padding: 40px;
+  }
+  .paginacion {
+    padding: 10px;
+  }
+  #btnAnterior {
+    cursor: pointer;
+    border: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: #070059;
+    color: var(--color-texto-blanco);
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+  }
+  #btnSiguiente {
+    cursor: pointer;
+    border: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: #070059;
+    color: var(--color-texto-blanco);
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+  }
+  #btnAnterior:hover {
+    background-color: var(--color-back-active);
+    transition: 0.2s ease-in-out;
+  }
+  #btnSiguiente:hover {
+    background-color: var(--color-back-active);
+    transition: 0.2s ease-in-out;
+  }
+  #loading {
+    width: 100%;
+    position: absolute;
+    top: 300px;
+    left: 0px;
+  }
+  .custom-loader {
+    width: 100px;
+    height: 100px;
+    display: grid;
+  }
+  .custom-loader::before,
+  .custom-loader::after {
+    content: "";
+    grid-area: 1/1;
+    --c: radial-gradient(farthest-side, #52c1f4 92%, #0000);
+    background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+      var(--c) 0 50%;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    animation: s2 1s infinite;
+  }
+  .custom-loader::before {
+    margin: 8px;
+    filter: hue-rotate(45deg);
+    background-size: 16px 16px;
+    animation-timing-function: linear;
+  }
+  @keyframes s2 {
+    100% {
+      transform: rotate(0.5turn);
     }
-    #form-movie-new form{
-        display: flex;
-        align-items: center;
-    }
-    #btnAgregar{
-        margin: 0 10px;
-        padding: 5px;
-        cursor: pointer;
-        border: 1px solid rgba(0, 0, 0, 0.425);
-        border-radius: 5px;
-        box-shadow:0px 2px 0px #373c3c;
-        transition: 0.2s ease-in-out;
-    }
-    #btnAgregar:hover{
-        box-shadow:0px 0px 0px;
-        transition: 0.2s ease-in-out;
-    }
-    #sec-messages{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #succes{
-        background-color: #28a745;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #warning{
-        background-color: #ffc107;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #error{
-        background-color: #dc3545;
-        border-radius: 15px;
-        padding: 10px 20px;
-        color: white;
-    }
-    #sec_peliculas{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 100px;
-    }
-    #cardPeliculas{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-auto-flow: dense;
-        grid-auto-rows: auto;
-        width: 100%;
-        max-width: 1000px;
-        justify-content: center;
-        gap: 10px;
-    
-    }
-    .contenedorPeliculas{
-        width: 225px;
-        overflow: hidden;
-        padding: 5px;
-    }
-    .contenedorPeliculas img{
-        width: 100%;
-        margin-bottom: 10px;
-        border-radius: 15px;
-        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
-    }
-    .contenedorPeliculas h3{
-        font-size: 16px;
-        text-align: center;
-        cursor: default;
-        margin: 0px 0px 15px 0px;
-    }
-    .contenedorPeliculas p{
-        color: var(--color-verde);
-        font-size: 12px;
-        margin: 0;
-        cursor: default;
-        font-weight: bold;
-    }
-    .contenedorPeliculas p span{
-        font-weight: lighter;
-    }
-    .contenedorPeliculas button{
-        margin: 20px 0px 15px 0px;
-        background-color: #7f8c8d;
-        text-align:center;
-        color: white;
-        width: 100%;
-        text-decoration: none;
-        display: flex;
-        border: none;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px;
-        padding:10px 0;
-        box-shadow:0px 3px 0px #373c3c;
-        transition: 0.2s ease-in-out;
-    }
-    .contenedorPeliculas button:hover{
-        box-shadow:0px 0px 0px;
-        transition: 0.2s ease-in-out;
-    }
-    #sec_paginador_peliculas{
-        padding: 40px;
-    }
-    .paginacion{
-        padding: 10px;
-    }
-    #btnAnterior{
-        cursor: pointer;
-        border: none;
-        display: inline;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 20px;
-        height: 50px;
-        width: 150px;
-        background-color: #070059;
-        color: var(--color-texto-blanco);
-        border-radius: 25px;
-        font-weight: bold;
-        transition: 0.3s ease all;
-    }
-    #btnSiguiente{
-        cursor: pointer;
-        border: none;
-        display: inline;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 20px;
-        height: 50px;
-        width: 150px;
-        background-color: #070059;
-        color: var(--color-texto-blanco);
-        border-radius: 25px;
-        font-weight: bold;
-        transition: 0.3s ease all;
-    }
-    #btnAnterior:hover{
-        background-color: var(--color-back-active);
-        transition: 0.2s ease-in-out;
-    }
-    #btnSiguiente:hover{
-        background-color: var(--color-back-active);
-        transition: 0.2s ease-in-out;
-    }
-    #loading{
-        width: 100%;
-        position: absolute;
-        top: 300px;
-        left: 0px;
-    }
-    .custom-loader {
-        width: 100px;
-        height: 100px;
-        display: grid;
-    }
-    .custom-loader::before,
-    .custom-loader::after {    
-        content:"";
-        grid-area: 1/1;
-        --c: radial-gradient(farthest-side,#52C1F4 92%,#0000);
-        background: 
-          var(--c) 50%  0, 
-          var(--c) 50%  100%, 
-          var(--c) 100% 50%, 
-          var(--c) 0    50%;
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        animation: s2 1s infinite;
-    }
-    .custom-loader::before {
-      margin:8px;
-      filter:hue-rotate(45deg);
-      background-size: 16px 16px;
-      animation-timing-function: linear
-    }
-    @keyframes s2{ 
-        100%{transform: rotate(.5turn)}
-    }
+  }
 }

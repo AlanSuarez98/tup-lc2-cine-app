@@ -33,11 +33,11 @@
     <main>
         <h2>Últimas Películas en Cartelera</h2>
         <section id="form-movie-new">
-            <p>Agregar Pelicula Favorita Por Codigo:</p>
-            <!--Seccion para agregar una palicula favorita por codigo-->
-            <form action="">
-                <input id="addCode" type="text" placeholder="Código de película">
-                <input type="button" id="btnAgregar" value="Agregar" onclick="addMovieCode()">
+            <p>Buscar Película por Nombre:</p>
+            <!-- Sección para buscar una película por nombre -->
+            <form onsubmit="return false;">
+                <input id="addCode" type="text" placeholder="Nombre Pelicula" onkeydown="handleEnter(event)">
+                <input type="button" id="btnAgregar" value="Buscar" onclick="searchMovie()">
             </form>
         </section>
         <section id="sec-messages">

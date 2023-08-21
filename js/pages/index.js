@@ -31,15 +31,14 @@ async function appMovies(page) {
 
     // Iterar sobre las películas y agregarlas al contenedor
     data.results.forEach((movie) => {
-      card.innerHTML += `<div class="contenedorPeliculas" id="contenedorPeliculas">
-        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path} " alt="${movie.title}">
-        <h3>${movie.title}</h3>
-        <p>Código: <span value"${movie.id}">${movie.id}</span></p>
-        <p>Título original: <span>${movie.original_title}</span></p>
-        <p>Idioma original: <span>${movie.original_language}</span></p>
-        <p>Año: <span>${movie.release_date}</span></p>
-        <button onclick="addFavoritas(${movie.id})">Agregar a favoritos</button>
-    </div>`;
+      card.innerHTML += `<a href="movie.html?id=${movie.id}"><div class="contenedorPeliculas" id="contenedorPeliculas">
+      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path} " alt="${movie.title}">
+      <h3>${movie.title}</h3>
+      <p>Código: <span>${movie.id}</span></p>
+      <p>Título original: <span>${movie.original_title}</span></p>
+      <p>Idioma original: <span>${movie.original_language}</span></p>
+      <p>Año: <span>${movie.release_date}</span></p>
+    </div></a>`;
     });
 
     // Obtener los botones de página anterior y siguiente
@@ -52,7 +51,8 @@ async function appMovies(page) {
 
     btnSiguiente.style.visibility =
       page === data.total_pages ? "hidden" : "visible";
-    btnSiguiente.style.cursor = page === data.total_pages ? "default" : "pointer";
+    btnSiguiente.style.cursor =
+      page === data.total_pages ? "default" : "pointer";
   } catch (error) {
     console.error("Error al cargar las películas:", error);
 
@@ -61,6 +61,56 @@ async function appMovies(page) {
     setTimeout(function () {
       mensaje.innerHTML = "";
     }, 5000);
+  }
+}
+
+function handleEnter(event) {
+  if (event.keyCode === 13) {
+    searchMovie();
+  }
+}
+
+// Función para buscar una película por nombre
+async function searchMovie() {
+  try {
+    // Obtener el valor del nombre de la película ingresado
+    const movieNameInput = document.getElementById("addCode");
+    const movieName = movieNameInput.value.trim();
+
+    if (movieName) {
+      // Realizar la solicitud a la API para buscar películas por nombre
+      const response = await fetch(
+        `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
+          movieName
+        )}&language=es-US&api_key=${apiKey}`
+      );
+
+      // Verificar si la respuesta es exitosa
+      if (!response.ok) {
+        throw new Error("Error al buscar la película por nombre");
+      }
+
+      // Obtener los datos de la respuesta
+      const data = await response.json();
+
+      // Mostrar las películas encontradas
+      const searchResultsContainer = document.getElementById("cardPeliculas");
+      searchResultsContainer.innerHTML = "";
+
+      data.results.forEach((movie) => {
+        searchResultsContainer.innerHTML += `<a href="movie.html?id=${movie.id}"><div class="contenedorPeliculas" id="contenedorPeliculas">
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path} " alt="${movie.title}">
+        <h3>${movie.title}</h3>
+        <p>Código: <span>${movie.id}</span></p>
+        <p>Título original: <span>${movie.original_title}</span></p>
+        <p>Idioma original: <span>${movie.original_language}</span></p>
+        <p>Año: <span>${movie.release_date}</span></p>
+      </div></a>
+        `;
+      });
+    }
+  } catch (error) {
+    console.error("Error al buscar la película por nombre:", error);
   }
 }
 
@@ -138,57 +188,6 @@ async function addFavoritas(id) {
     setTimeout(function () {
       mensaje.innerHTML = "";
     }, 5000);
-  }
-}
-
-// Función para agregar una película por código
-async function addMovieCode() {
-  try {
-    // Obtener el valor del código de la película ingresado
-    const movieCodeInput = document.getElementById("addCode");
-    const movieCode = parseInt(movieCodeInput.value);
-
-    // Variables para el mensaje y el contenedor del mensaje
-    let contenedor = `<p id="error">Error: La película seleccionada no se encuentra en la API o se produjo un error al consultar</p>`;
-    let mensaje = document.getElementById("sec-messages");
-    mensaje.innerHTML = "";
-
-    if (movieCode) {
-      // Verificar si la película ya está en el local storage
-      let savedIDs = JSON.parse(localStorage.getItem("movieIDs")) || [];
-      if (savedIDs.includes(movieCode)) {
-        // Mostrar mensaje de advertencia si la película ya está en favoritos
-        mensaje.innerHTML = `<p id="warning">La película ingresada ya se encuentra almacenada</p>`;
-        setTimeout(function () {
-          mensaje.innerHTML = "";
-        }, 5000);
-      } else {
-        // Verificar si la película existe en la API
-        const exists = await checkIfMovieExists(movieCode);
-        if (exists) {
-          // Agregar el código de la película al local storage y mostrar mensaje de éxito
-          addToLocalStorage(movieCode);
-          mensaje.innerHTML = `<p id="succes">Película agregada con éxito</p>`;
-
-          // Actualizar la lista de favoritas después de agregar una película
-          showFavorites();
-
-          // Limpiar el campo de entrada
-          movieCodeInput.value = "";
-        } else {
-          mensaje.innerHTML = contenedor;
-        }
-      }
-    } else {
-      mensaje.innerHTML = contenedor;
-    }
-
-    // Limpiar el mensaje
-    setTimeout(function () {
-      mensaje.innerHTML = "";
-    }, 5000);
-  } catch (error) {
-    console.error("Error al agregar película por código:", error);
   }
 }
 
