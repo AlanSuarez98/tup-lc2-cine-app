@@ -1,69 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
-    
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TUP LC2 - TP Integrador</title>
-        <link rel="shortcut icon" href="img/cinema_popcorn.ico" type="image/x-icon">
-        <!-- Estilos CSS -->
-        <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/pages/help.css">
-        <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script type="text/javascript">emailjs.init('t2JekgoA8uNM1zhEz')</script>
-    </head>
-    
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUP LC2 - TP Integrador</title>
+    <link
+      rel="shortcut icon"
+      href="img/cinema_popcorn.ico"
+      type="image/x-icon"
+    />
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pages/help.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      emailjs.init("t2JekgoA8uNM1zhEz");
+    </script>
+  </head>
+
+  <body>
     <header>
-        <h1>
-            <img src="img/IconoCine.png" alt="IconoCine" title="IconoCine">
-            <!--Titulo Cabecera-->
-            <span>Cartelera de Cine</span>
-        </h1>
-        
-        <nav>
-            <!--Menu Superior-->
-            <ul>
-                <li><a href="index.html">Cartelera</a></li>
-                <li><a href="favorities.html">Mis Favoritas</a></li>
-                <li class="current-page"><a href="">Ayuda</a></li>
-            </ul>
-        </nav>
+      <h1>
+        <img src="img/IconoCine.png" alt="IconoCine" title="IconoCine" />
+        <!--Titulo Cabecera-->
+        <span>Cartelera de Cine</span>
+      </h1>
+
+      <nav>
+        <!--Menu Superior-->
+        <ul>
+          <li><a href="index.html">Cartelera</a></li>
+          <li><a href="favorities.html">Mis Favoritas</a></li>
+          <li class="current-page"><a href="">Ayuda</a></li>
+        </ul>
+      </nav>
     </header>
     <!-- Contenido principal de la página -->
     <main>
-        <section id="sec_ayuda">
-            <!-- Sección de texto de ayuda-->
-            <h2>Ayuda Cine App v.1</h2>
-            <p>Esta App te permite consultar la cartelera de cine utilizando la API de <a href="https://www.themoviedb.org/documentation/api" target="_blank">The movie database API.</a><br/>
-            Para poder registrar sus películas favoritas deberá <a href="index.html">Agregar Favorito</a> desde la cartelera y luego visualizar nuestros favoritos desde <a href="favorities.html">Mis Favoritas</a>
-            <br> Si tiene alguna sugerencia o inconveniente por favor complete el siguiente formulario y envienoslo. Lo contactaremos a la brevedad.</p>
-        </section>
-        <section id="form-cine_contacto">
-            <!-- Sección donde se debe colocar el formulario de contacto-->
-            <form id="form">
-                <label for="from_name">Nombre: </label>
-                <input type="text" name="from_name" id="from_name">
-                <label for="email_id">Email: </label>
-                <input type="text" name="email_id" id="email_id">
-                <label for="message">Mensaje: </label>
-                <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                <div>
-                    <button type="reset">Limpiar</button>
-                    <input type="submit" id="button" value="Enviar" >
-                </div>
-              </form>
-        </section>
-        <section id="sec-cine-result">
+      <section id="sec_ayuda">
+        <!-- Sección de texto de ayuda-->
+        <h2>Ayuda Cine App v.1</h2>
+        <p>
+          Esta App te permite consultar la cartelera de cine utilizando la API
+          de
+          <a href="https://www.themoviedb.org/documentation/api" target="_blank"
+            >The movie database API.</a
+          ><br />
+          Para poder registrar sus películas favoritas deberá
+          <a href="index.html">Agregar Favorito</a> desde la cartelera y luego
+          visualizar nuestros favoritos desde
+          <a href="favorities.html">Mis Favoritas</a> <br />
+          Si tiene alguna sugerencia o inconveniente por favor complete el
+          siguiente formulario y envienoslo. Lo contactaremos a la brevedad.
+        </p>
+      </section>
+      <section id="form-cine_contacto">
+        <!-- Sección donde se debe colocar el formulario de contacto-->
+        <form id="form">
+          <label for="from_name">Nombre: </label>
+          <input type="text" name="from_name" id="from_name" />
+          <label for="email_id">Email: </label>
+          <input type="text" name="email_id" id="email_id" />
+          <label for="message">Mensaje: </label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+          <div>
+            <button type="reset">Limpiar</button>
+            <input type="submit" id="button" value="Enviar" />
+          </div>
+        </form>
+      </section>
+      <section id="sec-cine-result">
         <!-- Sección donde se debe mostrar los mensajes de error -->
-        </section>
-        <p></p>
+      </section>
+      <p></p>
     </main>
     <footer>
-        <p>Desarrollado con ♥ - LC2</p>
+      <p>Desarrollado con ♥</p>
     </footer>
     <script src="js/common.js" defer></script>
     <script src="js/pages/help.js" defer></script>
-</body>
-
+  </body>
 </html>

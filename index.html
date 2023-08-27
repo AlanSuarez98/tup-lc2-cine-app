@@ -1,71 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TUP LC2 - TP Integrador - Cine</title>
-    <link rel="shortcut icon" href="img/cinema_popcorn.ico" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="img/cinema_popcorn.ico"
+      type="image/x-icon"
+    />
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css/common.css"/>
-    <link rel="stylesheet" href="css/pages/index.css">
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pages/index.css" />
     <script src="js/common.js" defer></script>
     <script src="js/pages/index.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>
-            <img src="img/IconoCine.png" alt="IconoCine" title="IconoCine">
-            <!--Titulo Cabecera-->
-            <span>Cartelera de Cine</span>
-        </h1>
-        <nav>
-            <!--Menu Superior-->
-            <ul>
-                <li class="current-page"><a href="#">Cartelera</a></li>
-                <li><a href="favorities.html">Mis Favoritas</a></li>
-                <li><a href="help.html">Ayuda</a></li>
-            </ul>
-        </nav>
+      <h1>
+        <img src="img/IconoCine.png" alt="IconoCine" title="IconoCine" />
+        <!--Titulo Cabecera-->
+        <span>Cartelera de Cine</span>
+      </h1>
+      <nav>
+        <!--Menu Superior-->
+        <ul>
+          <li class="current-page"><a href="#">Cartelera</a></li>
+          <li><a href="favorities.html">Mis Favoritas</a></li>
+          <li><a href="help.html">Ayuda</a></li>
+        </ul>
+      </nav>
     </header>
     <!-- Contenido principal de la página -->
     <main>
-        <h2>Últimas Películas en Cartelera</h2>
-        <section id="form-movie-new">
-            <p>Buscar Película por Nombre:</p>
-            <!-- Sección para buscar una película por nombre -->
-            <form onsubmit="return false;">
-                <input id="addCode" type="text" placeholder="Nombre Pelicula" onkeydown="handleEnter(event)">
-                <input type="button" id="btnAgregar" value="Buscar" onclick="searchMovie()">
-            </form>
-        </section>
-        <section id="sec-messages">
-            <!--Seccion para mensajes-->
-            
-        </section>
-        <section id="loading">
-            <div class="custom-loader"></div>
-        </section>
-        <section id="sec_peliculas">
-            <!--Seccion visualizacion de peliculas-->
-            <article id="cardPeliculas">
-                
-            </article>
-            
-        </section>
-        <section id="sec_paginador_peliculas">
-            <!--Seccion de Paginacion-->
-            <div class="paginacion" id="paginacion">
-                <button id="btnAnterior" onclick="loadPreviousPage()">Anterior</button>
-                <button id="btnSiguiente" onclick="loadNextPage()">Siguiente</button>
-            </div>
-        </section>
-
+      <h2>Últimas Películas en Cartelera</h2>
+      <section id="form-movie-new">
+        <p>Buscar Película por Nombre:</p>
+        <!-- Sección para buscar una película por nombre -->
+        <form onsubmit="return false;">
+          <input
+            id="addCode"
+            type="text"
+            placeholder="Nombre Pelicula"
+            onkeydown="handleEnter(event)"
+          />
+          <input
+            type="button"
+            id="btnAgregar"
+            value="Buscar"
+            onclick="searchMovie()"
+          />
+        </form>
+      </section>
+      <section id="sec-messages">
+        <!--Seccion para mensajes-->
+      </section>
+      <section id="loading">
+        <div class="custom-loader"></div>
+      </section>
+      <section id="sec_peliculas">
+        <!--Seccion visualizacion de peliculas-->
+        <article id="cardPeliculas"></article>
+      </section>
+      <section id="sec_paginador_peliculas">
+        <!--Seccion de Paginacion-->
+        <div class="paginacion" id="paginacion">
+          <button id="btnAnterior" onclick="loadPreviousPage()">
+            Anterior
+          </button>
+          <button id="btnSiguiente" onclick="loadNextPage()">Siguiente</button>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>Desarrollado con ♥ - LC2</p>
+      <p>Desarrollado con ♥</p>
     </footer>
-</body>
-
+  </body>
 </html>
